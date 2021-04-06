@@ -1,0 +1,38 @@
+@mixin absolute-cube($size, $set-absolute: true) {
+	@if ($set-absolute) {
+		position: absolute;
+	}
+
+	top: (100% - $size) / 2;
+	left: (100% - $size) / 2;
+	width: $size;
+	height: $size;
+}
+
+@mixin absolute-gap($size, $set-absolute: true) {
+	@if ($set-absolute) {
+		position: absolute;
+	}
+
+	top: $size;
+	right: $size;
+	left: $size;
+	bottom: $size;
+}
+
+@mixin absolute-centering($max-height: true, $max-width: false) {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+
+	@if ($max-height) {
+		max-height: 100%;
+	}
+
+	@if ($max-width) {
+		max-width: 100%;
+	}
+}

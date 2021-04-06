@@ -1,0 +1,17 @@
+/**
+@param {Number} $font-size - размер в пикселях
+@param {Number} $line-height - размер в пикселях
+@param {Number} $letter-spacing - размер в емах
+ */
+
+@mixin font-mixin($font-size: $rem-base, $line-height: false, $letter-spacing: false) {
+	font-size: rem($font-size);
+
+	@if ($line-height) {
+		line-height: rem($line-height);
+	}
+
+	@if ($letter-spacing) {
+		letter-spacing: rem($letter-spacing * $font-size);
+	}
+}

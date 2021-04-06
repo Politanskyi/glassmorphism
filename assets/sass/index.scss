@@ -1,0 +1,123 @@
+@import "fonts";
+@import "variables";
+@import "ui-tools";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $default-font;
+}
+
+html {
+	font-size: $root-font-size;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: $color-main;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient($color-red, $color-pink-light);
+		clip-path: circle(30% at right 70%);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient($color-blue, $color-pink-main);
+		clip-path: circle(20% at 10% 10%);
+	}
+}
+
+.container {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	max-width: rem(1200);
+	z-index: 1;
+}
+
+.card {
+	$card: &;
+
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(280);
+	height: rem(400);
+	margin: rem(30);
+	box-shadow: rem(20) rem(20) rem(50) $color-black-05;
+	border-radius: rem(15);
+	background: $color-gray-01;
+	overflow: hidden;
+	border-top: 1px solid $color-gray-05;
+	border-left: 1px solid $color-gray-05;
+	backdrop-filter: blur(5px);
+
+
+	&__content {
+		padding: rem(20);
+		text-align: center;
+	}
+
+	&__number {
+		@include font-mixin(128);
+
+		position: absolute;
+		top: rem(-30);
+		right: rem(30);
+		font-weight: 700;
+		color: $color-gray-005;
+		cursor: default;
+		pointer-events: none;
+	}
+
+	&__title {
+		@include font-mixin(29);
+
+		position: relative;
+		color: $color-white;
+		cursor: default;
+		z-index: 1;
+	}
+
+	&__text {
+		font-weight: 300;
+		color: $color-white;
+		cursor: default;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		margin-top: rem(15);
+		padding: rem(8) rem(20);
+		background: $color-white;
+		color: $color-black;
+		border-radius: rem(20);
+		text-decoration: none;
+		font-weight: 500;
+		box-shadow: 0 rem(5) rem(15) $color-black-02;
+	}
+}
